@@ -17,6 +17,15 @@
 
   <!-- Custom styles for this template-->
   <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144503295-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144503295-1');
+</script>
 
 </head>
 
