@@ -2,11 +2,11 @@
 
 @section('menu')
 <ul class="nav navbar-nav navbar-right">
-               <li ><a href="/index">Home</a></li>
-                <li class="active"><a href="/about">About</a></li>
-                <li><a href="/agent">Agents</a></li>         
+               <li><a href="/index" style="font-size: 16px;">Home</a></li>
+                <li class="active"><a href="/about" style="font-size: 16px; font-weight: bold">About</a></li>
+                <li><a href="/agent" style="font-size: 16px;">Agents</a></li>
                 <!-- <li><a href="/blog">Blog</a></li> -->
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/contact" style="font-size: 16px;">Contact</a></li>
               </ul>
 @endsection
 @section('contents')
@@ -27,10 +27,17 @@
   <div class="col-lg-8  col-lg-offset-2">
   <img src="images/about.jpg" class="img-responsive thumbnail"  alt="realestate">
   <h3>Business Background</h3>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  <h3>Company Profile</h3>
-  <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+  <p style="font-size: 19px;">Joe Solution LTD is a company that help in renting of small and big living houses. We help also those who need short and long living Appartment and who need Offices. Joe Solution help people who need to sell houses and those ones need to buy them in the same time and the service related on buying and selling houses.</p>
+  <!-- <h3>Company Profile</h3>
+  <p></p> -->
+  <h3>Our Mission</h3>
+  <p style="font-size: 19px;">We would like to inform you that at Joe Solution LTD we have this services:
+    <ul style="font-size: 18px; list-style-type: square;">
+      <li>We want to improve the way of getting rent house for free in quick manner in order to avoid some disorder from some people.</li><br/>
+      <li>We invite all clerk in housing services to work with us because we can give them access to facilate their work.</li><br/>
+      <li>We help people who want to sell and buy house in Easily way.</li>
+    </ul></p>
+  <!-- <p style="font-size: 19px;"></p> -->
   </div>
  
 </div>

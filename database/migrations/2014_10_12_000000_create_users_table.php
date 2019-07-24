@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('province')->nullable();
             $table->string('passport')->nullable();
             $table->string('before')->nullable();
+            $table->string('details')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->softDeletes();

@@ -37,12 +37,11 @@
              <div class="col-lg-3 col-sm-3">
                     <h4>Contact us</h4>
                     <p><b>House Rent Rwanda</b><br>
-<span class="glyphicon glyphicon-map-marker"></span> Kigali Rwanda <br>
-<span class="glyphicon glyphicon-envelope"></span> houserentrwanda@gmail.com<br>
+ <span class="glyphicon glyphicon-envelope"></span> houserentrwanda@gmail.com<br>
 <span class="glyphicon glyphicon-earphone"></span> +250781448238</p>
             </div>
         </div>
-<p class="copyright"> Copyright &copy 2013. All rights reserved. Designed by Rwagatenga Fred 	</p>
+<p class="copyright"> Copyright &copy 2013. All rights reserved. Designed by <a href="fredrw.netlify.com"> Rwagatenga Fred </a>	</p>
 
 
 </div></div>

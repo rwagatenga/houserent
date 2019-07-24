@@ -549,7 +549,8 @@ class AdminController extends Controller
             'province' => 'required|',
             'district' => 'required',
             'sector' => 'required',
-            'role' => 'required'
+            'role' => 'required',
+            'details' => 'required|min:3|max:50000'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
@@ -572,6 +573,7 @@ class AdminController extends Controller
                 $user->last_name=$request->other_name;
                 $user->telephone=$request->telephone;
                 $user->email=$request->email;
+                $user->details=$request->details;
                 $user->province=$request->province;
                 $user->district=$request->district;
                 $user->sector=$request->sector;

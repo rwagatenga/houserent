@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
+//use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use App\User;
 use App\Property;
 use App\Contact;
 use App\Message;
 //use App\Subscriber;
-
+use Auth;
 use DB;
 use Redirect;
 use Validator;
@@ -28,7 +29,7 @@ class FrontController extends Controller
     {
         //
         $high = Property::latest('id')->where('commission', '=', 'High')->where('status', '=', 1)->get();
-        $look = Property::latest('id')->paginate(10);//->get();
+        $look = Property::latest('id')->where('status', '=',  1)->paginate(10);//->get();
         $search = DB::table('properties')
             // ->select('properties.*')
               ->DISTINCT()
@@ -39,12 +40,14 @@ class FrontController extends Controller
             // ->select('properties.*')
               ->DISTINCT()
               ->get(['house_type', 'house_class']);
+        $hot = Property::latest()->where('commission', '=', 'High')->where('status', '=', 1)->take(4)->get();
               
         return view('/front/index', [
             'look' => $look, 
             'high' => $high,
             'search' => $search,
-            's' => $s
+            's' => $s,
+            'hot' => $hot
         ]);
     }
 
@@ -123,7 +126,7 @@ class FrontController extends Controller
         ->get();
         $agent = User::where('id', '=', $read[0]->agent_id)->get();
          $distination = json_decode($read[0]->inside_photos, true);
-         $hot = Property::latest()->where('commission', '=', 'High')->take(3)->get();
+         $hot = Property::latest()->where('commission', '=', 'High')->where('status', '=', 1)->take(3)->get();
          $search = DB::table('properties')
             ->select('properties.*')
               ->DISTINCT()
@@ -279,9 +282,9 @@ class FrontController extends Controller
 
     public function buy()
     {
-        $search = Property::latest()->where('house_type', '=', 'Buy')->paginate(6);
+        $search = Property::latest()->where('house_type', '=', 'Buy')->where('status', '=', 1)->paginate(6);
          $all = Property::get();
-         $hot = Property::latest()->where('commission', '=', 'High')->get();
+         $hot = Property::latest()->where('commission', '=', 'High')->where('status', '=', 1)->get();
          $count = $search->count();
         if (!$search) {
             return view('front.404');
@@ -299,10 +302,10 @@ class FrontController extends Controller
 
     public function sale()
     {
-        $search = Property::latest()->where('house_type', '=', 'Sale')->paginate(6);
+        $search = Property::latest()->where('house_type', '=', 'Sale')->where('status', '=', 1)->paginate(6);
          $all = Property::get();
          $count = $search->count();
-         $hot = Property::latest()->where('commission', '=', 'High')->get();
+         $hot = Property::latest()->where('commission', '=', 'High')->where('status', '=', 1)->get();
         if (!$search) {
             return view('front.404');
             
@@ -319,10 +322,10 @@ class FrontController extends Controller
 
     public function rent()
     {
-        $search = Property::latest()->where('house_type', '=', 'Rent')->paginate(6);
+        $search = Property::latest()->where('house_type', '=', 'Rent')->where('status', '=', 1)->paginate(6);
         $all = Property::get();
         $count = $search->count();
-        $hot = Property::latest()->where('commission', '=', 'High')->get();
+        $hot = Property::latest()->where('commission', '=', 'High')->where('status', '=', 1)->get();
         if (!$search) {
             return view('front.404');
             
@@ -337,27 +340,23 @@ class FrontController extends Controller
         }
         
     }
-//     public function subscribers(Request $request)
-//     {
-//         $rule = [
-//             'email' => 'required|email|distinct'
-//         ];
-//         $validator = Validator::make($request->all(), $rules);
-//         if ($validator->fails()) {
-//             $message = $validator->messages();
-//             if ($message) {
-//                     return redirect()->back()->withInput()->with('errors', $message);
-//                 }
-//             }
-//         else {
-//             $save = new Subscriber();
-//             $save->email=$request->email;
-//             $save->save();
-//             if (! Newsletter::isSubscribed($request->email)) {
-//                 Newsletter::subscribePending($request->email);
-//                 return redirect('newsletter')->with('success', 'Thanks For Subscribe');
-//             }
-//             return redirect('newsletter')->with('failure', 'Sorry! You have already subscribed ');
-//         }
-//     }
-// }
+    public function blank()
+    {
+
+        $all = DB::table('users')
+        ->join('properties', 'users.id', '=', 'properties.user_id')
+        ->get();
+        $numbers = Message::latest()->where('user_id', '=', Auth::user()->id)->where('status', '=', 1)->get();
+        $number = $numbers->count();
+        $notify = Contact::latest()->where('status', '=', 1)->get();
+        $noti = $notify->count();
+        return view('back/blank', [
+            'all' => $all,
+            'numbers' => $numbers,
+            'number' => $number,
+            'notify' => $notify,
+            'noti' => $noti
+        ]);
+    }
+
+}

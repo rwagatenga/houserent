@@ -133,7 +133,7 @@
   <!-- <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pulchowk,+Patan,+Central+Region,+Nepal&amp;aq=0&amp;oq=pulch&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Pulchowk,+Patan+Dhoka,+Patan,+Bagmati,+Central+Region,+Nepal&amp;ll=27.678236,85.316853&amp;spn=0.001347,0.002642&amp;t=m&amp;z=14&amp;output=embed"></iframe> -->
   <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q={{$view->latitude}}%2C%20{{$view->longitude}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{position:relative;text-align:right;height:300;width:500px;}.gmap_canvas {overflow:hidden;background:none!important;height:350px;width:500px;}</style></div>
 
-  <a href="https://www.latlong.net/c/?lat={{$view->latitude}}&long={{$view->longitude}}" target="_blank">({{$view->latitude}}, {{$view->longitude}})</a>
+  <!-- <a href="https://www.latlong.net/c/?lat={{$view->latitude}}&long={{$view->longitude}}" target="_blank">({{$view->latitude}}, {{$view->longitude}})</a> -->
     <div id="map_canvas"></div>
   </div>
   </div>

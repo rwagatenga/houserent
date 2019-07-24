@@ -1,11 +1,11 @@
 @extends('front.master')
 @section('menu')
 <ul class="nav navbar-nav navbar-right">
-               <li ><a href="/index">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/agent">Agents</a></li>
+               <li><a href="/index" style="font-size: 16px;">Home</a></li>
+                <li><a href="/about" style="font-size: 16px; ">About</a></li>
+                <li><a href="/agent" style="font-size: 16px;">Agents</a></li>
                 <!-- <li><a href="/blog">Blog</a></li> -->
-                <li class="active"><a href="/contact">Contact</a></li>
+                <li class="active"><a href="/contact" style="font-size: 16px;font-weight: bold">Contact</a></li>
               </ul>
 @endsection
 @section('contents')

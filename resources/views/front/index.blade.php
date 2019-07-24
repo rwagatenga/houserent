@@ -2,11 +2,11 @@
 <!------------------------>
 @section('menu')
 <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="{{url('/index')}}">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/agent">Agents</a></li>
+               <li class="active"><a href="{{url('/index')}}" style="font-size: 16px;font-weight: bold">Home</a></li>
+                <li><a href="/about" style="font-size: 16px;">About</a></li>
+                <li><a href="/agent" style="font-size: 16px;">Agents</a></li>
                 <!-- <li><a href="/blog">Blog</a></li> -->
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/contact" style="font-size: 16px;">Contact</a></li>
               </ul>
 @endsection
 @section('contents')
@@ -20,7 +20,7 @@
           <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
             <div class="sl-slide-inner">
               <div class="bg-img " style="background-image:url('{{ asset('rent_images/'.$view->first_photo) }}')"></div>
-              <h2><a href="#">{{$view->bedroom}} Bed Rooms and {{$view->bathroom}} BathRoom {{$view->house_class}} for {{$view->house_type}}</a></h2>
+              <h2><a href="{{url('details/'.$view->id)}}">{{$view->bedroom}} Bed Rooms and {{$view->bathroom}} BathRoom {{$view->house_class}} for {{$view->house_type}}</a></h2>
               <blockquote>              
               <p class="location"><span class="glyphicon glyphicon-map-marker"></span> {{$view->sector}}, {{$view->district}}, {{$view->province}}, Rwanda</p>
               <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
@@ -110,7 +110,7 @@
 </div>
 <!-- banner -->
 <div class="container">
-  <div class="properties-listing spacer"> <a href="buysalerent.php" class="pull-right viewall">View All Listing</a>
+  <div class="properties-listing spacer"> <!-- <a href="buysalerent.php" class="pull-right viewall">View All Listing</a> -->
      @if (\Session::has('Errors'))
                       <div class="col-sm-12">
                           <div class="alert  alert-danger alert-dismissible fade show" role="alert">
@@ -122,6 +122,7 @@
                       </div>
                       @endif
     <h2>Featured Properties</h2>
+    
     <div id="owl-example" class="owl-carousel">
       @foreach($look as $key => $view)
       <div class="properties">
@@ -129,7 +130,7 @@
           <div class="status sold">{{$view->house_type}}</div>
         </div>
         <h4><a href="{{url('details/'.$view->id)}}">{{$view->house_class}}</a></h4>
-        <p class="price">Price: {{$view->price}} &nbsp &nbsp @if($view->negotiate == 'Negotiable'){{$view->negotiate}} @else {{" "}} @endif</p>
+        <p class="price">Price: {{$view->price}} {{$view->currency}} &nbsp &nbsp @if($view->negotiate == 'Negotiable'){{$view->negotiate}} @else {{" "}} @endif</p>
         <div class="listing-detail">
           <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">{{$view->bedroom}}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bath Room">{{$view->bathroom}}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">{{$view->parking}}</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">{{$view->kitchen}}</span>
         </div>
@@ -137,7 +138,7 @@
       </div>
       @endforeach
 
-      <!-- <div class="properties">
+      <!--<div class="properties">
         <div class="image-holder"><img src="images/properties/2.jpg" class="img-responsive" alt="properties"/>
           <div class="status new">New</div>
         </div>
@@ -145,22 +146,22 @@
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties"/></div>
         <h4><a href="property-detail.php">Royal Inn</a></h4>
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/4.jpg" class="img-responsive" alt="properties"/></div>
         <h4><a href="property-detail.php">Royal Inn</a></h4>
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties"/>
           <div class="status sold">Sold</div>
         </div>
@@ -168,8 +169,8 @@
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/2.jpg" class="img-responsive" alt="properties"/>
           <div class="status sold">Sold</div>
         </div>
@@ -177,8 +178,8 @@
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties"/>
           <div class="status new">New</div>
         </div>
@@ -186,37 +187,38 @@
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/4.jpg" class="img-responsive" alt="properties"/></div>
         <h4><a href="property-detail.php">Royal Inn</a></h4>
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties"/></div>
         <h4><a href="property-detail.php">Royal Inn</a></h4>
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/2.jpg" class="img-responsive" alt="properties"/></div>
         <h4><a href="property-detail.php">Royal Inn</a></h4>
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
-      <!-- <div class="properties">
+      </div>
+      <div class="properties">
         <div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties"/></div>
         <h4><a href="property-detail.php">Royal Inn</a></h4>
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
-      </div> -->
+      </div>-->
       
     </div>
+    {{ $look->links() }}
   </div>
   <div class="spacer">
     <div class="row">
@@ -226,7 +228,7 @@
       
       </div>
       <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
-        <!-- <h3>Recommended Properties</h3>
+        <h3>Recommended Properties</h3>
         <div id="myCarousel" class="carousel slide">
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -234,17 +236,19 @@
             <li data-target="#myCarousel" data-slide-to="2" class=""></li>
             <li data-target="#myCarousel" data-slide-to="3" class=""></li>
           </ol>
-          <!-- Carousel items -->
-          <!-- <div class="carousel-inner">
+          <!-- Carousel items-->
+          <div class="carousel-inner">
+            @foreach($hot as $view)
             <div class="item active">
               <div class="row">
-                <div class="col-lg-4"><img src="images/properties/1.jpg" class="img-responsive" alt="properties"/></div>
+                <div class="col-lg-4"><img src="{{asset('rent_images/'.$view->first_photo)}}" class="img-responsive" alt="properties"/></div>
                 <div class="col-lg-8">
-                  <h5><a href="property-detail.php">Integer sed porta quam</a></h5>
-                  <p class="price">$300,000</p>
-                  <a href="property-detail.php" class="more">More Detail</a> </div>
+                  <h5><a href="{{url('/details/'.$view->id)}}">{{$view->house_class}} For {{$view->house_type}}</a></h5>
+                  <p class="price">{{$view->price}} {{$view->currency}} &nbsp &nbsp @if($view->negotiate == 'Negotiable'){{$view->negotiate}} @else {{" "}} @endif</p>
+                  <a href="{{url('/details/'.$view->id)}}" class="more">More Detail</a> </div>
               </div>
             </div>
+            @endforeach
             <div class="item">
               <div class="row">
                 <div class="col-lg-4"><img src="images/properties/2.jpg" class="img-responsive" alt="properties"/></div>
@@ -273,7 +277,7 @@
               </div>
             </div>
           </div>
-        </div> -->
+        </div> 
       </div>
     </div>
   </div>

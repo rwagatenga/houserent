@@ -184,12 +184,12 @@
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <!-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
-          </button>
+          </button> -->
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -198,7 +198,7 @@
                 </button>
               </div>
             </div>
-          </form>
+          </form> -->
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -209,7 +209,7 @@
                 <i class="fas fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+              <!-- <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -220,7 +220,7 @@
                     </div>
                   </div>
                 </form>
-              </div>
+              </div> -->
             </li>
             @if(Auth::user()->role == 'Admin')
             <!-- Nav Item - Alerts -->
@@ -396,6 +396,13 @@
                                     </span>
                                 @endif
                                 <br/>
+                    <input type="text" name="district" class="form-control" placeholder="Enter District...Eg: Gasabo, Kicukiro" class="form-control{{ $errors->has('district') ? ' is-invalid' : '' }}" value="{{ old('district') }}" required>
+                    @if ($errors->has('district'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('district') }}</strong>
+                                    </span>
+                                @endif
+                                <br/>
                     
                 </div>
               </div>
@@ -410,13 +417,6 @@
                 </div>
                 <div class="card-body">
                   
-                  <input type="text" name="district" class="form-control" placeholder="Enter District...Eg: Gasabo, Kicukiro" class="form-control{{ $errors->has('district') ? ' is-invalid' : '' }}" value="{{ old('district') }}" required>
-                    @if ($errors->has('district'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('district') }}</strong>
-                                    </span>
-                                @endif
-                                <br/>
                     <input type="text" name="sector" class="form-control" placeholder="Enter Sector...Eg: Kacyuru, Gatenga" class="form-control{{ $errors->has('sector') ? ' is-invalid' : '' }}" value="{{ old('sector') }}" required>
                     @if ($errors->has('sector'))
                                     <span class="invalid-feedback" role="alert">
@@ -439,6 +439,13 @@
                     @if ($errors->has('photo'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('photo') }}</strong>
+                                    </span>
+                                @endif
+                                <br/>
+                    <Textarea type="text" name="details" class="form-control" placeholder="Enter More Details to Agent" class="form-control{{ $errors->has('details') ? ' is-invalid' : '' }}" value="{{ old('details') }}" rows = "3" required></Textarea>
+                    @if ($errors->has('details'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('details') }}</strong>
                                     </span>
                                 @endif
                                 <br/>

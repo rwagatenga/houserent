@@ -52,7 +52,7 @@
 
 
             <!-- Nav Starts -->
-            <div class="navbar-collapse  collapse">
+            <div class="navbar-collapse  collapse" >
               @yield('menu')
             </div>
             <!-- #Nav Ends -->
@@ -71,7 +71,7 @@
 
 <!-- Header Starts -->
 <div class="header">
-<a href="{{url('index')}}"><img src="{{asset('images/logoo.png')}}" style="width: 110px; height: 110px;" alt="Realestate"></a>
+<a href="{{url('index')}}"><img src="{{asset('images/joe.jpeg')}}" style="width: 100%;max-width: 380px; height: auto;" class = "img-responsive" alt="Realestate"></a>
 
               <ul class="pull-right">
                 <li><a href="/buy">Buy</a></li>
@@ -81,7 +81,8 @@
 </div>
 <!-- #Header Starts -->
 </div>
-@yield('contents')
+  @yield('contents')
+
 
 
 
@@ -96,9 +97,9 @@
             <div class="col-lg-3 col-sm-3">
                    <h4>Information</h4>
                    <ul class="row">
+                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/">Home</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/about">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/agent">Agents</a></li>         
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/blog">Blog</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/contact">Contact</a></li>
               </ul>
             </div>
@@ -113,21 +114,21 @@
             
             <div class="col-lg-3 col-sm-3">
                     <h4>Follow us</h4>
-                    <a href="https://www.facebook.com"><img src="{{asset('images/facebook.png')}}" alt="facebook"></a>
-                    <a href="https://www.twitter.com"><img src="{{asset('images/twitter.png')}}" alt="twitter"></a>
+                    <a href="https://www.facebook.com" target="_blank"><img src="{{asset('images/facebook.png')}}" alt="facebook"></a>
+                    <a href="https://www.twitter.com" target="_blank"><img src="{{asset('images/twitter.png')}}" alt="twitter"></a>
                     <!-- <a href="#"><img src="{{asset('images/linkedin.png')}}" alt="linkedin"></a> -->
-                    <a href="https://www.instagram.com"><img src="{{asset('images/instagram.png')}}" alt="instagram"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img src="{{asset('images/instagram.png')}}" alt="instagram"></a>
             </div>
 
              <div class="col-lg-3 col-sm-3">
                     <h4>Contact us</h4>
                     <p><b>House Rent Rwanda</b><br>
 <span class="glyphicon glyphicon-map-marker"></span> Kigali Rwanda <br>
-<span class="glyphicon glyphicon-envelope"></span> houserentrwanda@gmail.com<br>
-<span class="glyphicon glyphicon-earphone"></span> +250781448238</p>
+<span class="glyphicon glyphicon-envelope"></span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fredrwagatenga@gmail.com&su=House Rent Rwada&body=BODY&" target="_blank"> houserentrwanda@gmail.com</a><br>
+<span class="glyphicon glyphicon-earphone"></span> <a href="tel:+250781448238"> +250781448238</a></p>
             </div>
         </div>
-<p class="copyright" style="font-size: 15px;"> Copyright &copy 2019. All rights reserved. Designed by <a href="https://youngdevelopers.webnode.com" target="blank">Rwagatenga Fred </a> </p>
+<p class="copyright" style="font-size: 16px;"> Copyright &copy 2019. All rights reserved. Designed by <a href="https://fredrw.netlify.com" target="blank" style="color: white green">Rwagatenga Fred </a> </p>
 
 
 </div></div>

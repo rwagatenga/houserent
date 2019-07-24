@@ -185,12 +185,13 @@
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <!-- Sidebar Toggle (Topbar) -->
+          <!-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
-          </button>
+          </button> -->
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -199,7 +200,7 @@
                 </button>
               </div>
             </div>
-          </form>
+          </form> -->
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -210,7 +211,7 @@
                 <i class="fas fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+              <!-- <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -221,7 +222,7 @@
                     </div>
                   </div>
                 </form>
-              </div>
+              </div> -->
             </li>
             @if(Auth::user()->role == 'Admin')
             <!-- Nav Item - Alerts -->
@@ -494,6 +495,7 @@
                   <select name="currency" class="form-control{{ $errors->has('currency') ? ' is-invalid' : '' }}" value="{{ old('currency') }}" required>
                       <option disabled selected hidden">Select Currency</option>
                       <option>frw</option>
+                       <option>$</option>
                       <!-- <option>High</option> -->
                     </select>
                             @if ($errors->has('currency'))
@@ -551,7 +553,7 @@
                                 @endif
                                 <br/>
                     <label>Latitude</label>
-                    <input type="text" name="latitude" id="latitude" placeholder="Enter Latitude" class="form-control{{ $errors->has('latitude') ? ' is-invalid' : '' }}" value="{{ old('latitude') }}" required>
+                    <input type="text" name="latitude" id="latitude" placeholder="Enter Latitude" class="form-control{{ $errors->has('latitude') ? ' is-invalid' : '' }}" value="{{ old('latitude') }}">
                     @if ($errors->has('price'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('latitude') }}</strong>
@@ -559,7 +561,7 @@
                                 @endif
                                 
                                 <label>Longitude</label>
-                                <input type="text" name="longitude" id="longitude" placeholder="Enter Longitude" class="form-control{{ $errors->has('longitude') ? ' is-invalid' : '' }}" value="{{ old('longitude') }}" required>
+                                <input type="text" name="longitude" id="longitude" placeholder="Enter Longitude" class="form-control{{ $errors->has('longitude') ? ' is-invalid' : '' }}" value="{{ old('longitude') }}" >
                     @if ($errors->has('longitude'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('longitude') }}</strong>

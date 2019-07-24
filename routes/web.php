@@ -18,6 +18,7 @@ Route::get('/', 'FrontController@index');
 // Route::match(['get', 'post'], 'register', function(){
 //     return redirect('/');
 // });
+Route::get('/blank', 'FrontController@blank');
 Route::get('/tests', 'AdminController@test');
 Route::get('/index', 'FrontController@index');
 Route::get('/about', function() {

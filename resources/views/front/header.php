@@ -77,7 +77,7 @@
 
 <!-- Header Starts -->
 <div class="header">
-<a href="index.php"><img src="images/logoo.png" style="width: 110px; height: 110px;" alt="Realestate"></a>
+<a href="/"><img src="images/freerent.jpeg"  alt="Realestate"></a>
 
               <ul class="pull-right">
                 <li><a href="/buy">Buy</a></li>
