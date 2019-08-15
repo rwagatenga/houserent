@@ -19,6 +19,8 @@
   <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144503295-1"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144503295-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -26,6 +28,16 @@
 
   gtag('config', 'UA-144503295-1');
 </script>
+
+<script>
+// (function(i,s,o,g,r,a,m){i['GooglAnalyticsObject']=r;i[r]||function(){
+// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=l*new Date();a=s.createElement(o),
+// m=s.getElementsByTagName(o)[0];a.async=l;a.src=g;m.parentNode.insertBefore(a,m)
+// })(window, document, 'script', 'https://www.google.com/analytics.js','ga');
+
+// ga('create', 'UA-144503295-1');
+// ga('send', 'pageview');
+ </script>
 
 </head>
 
@@ -335,7 +347,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+          <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
 
         </div>
         <!-- /.container-fluid -->
