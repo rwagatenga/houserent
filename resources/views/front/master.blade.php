@@ -142,7 +142,7 @@ ga('send', 'pageview');
                     <p><b>House Rent Rwanda</b><br>
 <span class="glyphicon glyphicon-map-marker"></span> Kigali Rwanda <br>
 <span class="glyphicon glyphicon-envelope"></span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jofreerent@gmail.com&su=House Rent Rwada&body=BODY&" target="_blank"> jofreerent@gmail.com</a><br>
-<span class="glyphicon glyphicon-earphone"></span> <a href="tel:+250781448238"> +250781448238</a></p>
+<span class="glyphicon glyphicon-earphone"></span> <a href="tel:+250781448238"> +250785743444</a></p>
             </div>
         </div>
 <p class="copyright" style="font-size: 16px;"> Copyright &copy 2019. All rights reserved. Designed by <a href="https://fredrw.netlify.com" target="blank" style="color: white green">Rwagatenga Fred </a> </p>
