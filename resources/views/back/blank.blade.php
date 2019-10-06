@@ -30,13 +30,13 @@
 </script>
 
 <script>
-// (function(i,s,o,g,r,a,m){i['GooglAnalyticsObject']=r;i[r]||function(){
-// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=l*new Date();a=s.createElement(o),
-// m=s.getElementsByTagName(o)[0];a.async=l;a.src=g;m.parentNode.insertBefore(a,m)
-// })(window, document, 'script', 'https://www.google.com/analytics.js','ga');
+(function(i,s,o,g,r,a,m){i['GooglAnalyticsObject']=r;i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=l*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=l;a.src=g;m.parentNode.insertBefore(a,m)
+})(window, document, 'script', 'https://www.google.com/analytics.js','ga');
 
-// ga('create', 'UA-144503295-1');
-// ga('send', 'pageview');
+ga('create', 'UA-144503295-1');
+ga('send', 'pageview');
  </script>
 
 </head>

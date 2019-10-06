@@ -27,6 +27,23 @@
     <script type="text/javascript" src="{{asset('assets/slitslider/js/jquery.ba-cond.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/slitslider/js/jquery.slitslider.js')}}"></script>
 <!-- slitslider -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144503295-1');
+</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GooglAnalyticsObject']=r;i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=l*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=l;a.src=g;m.parentNode.insertBefore(a,m)
+})(window, document, 'script', 'https://www.google.com/analytics.js','ga');
+
+ga('create', 'UA-144503295-1');
+ga('send', 'pageview');
+ </script>
 
 </head>
 
@@ -115,16 +132,16 @@
             <div class="col-lg-3 col-sm-3">
                     <h4>Follow us</h4>
                     <a href="https://www.facebook.com" target="_blank"><img src="{{asset('images/facebook.png')}}" alt="facebook"></a>
-                    <a href="https://www.twitter.com" target="_blank"><img src="{{asset('images/twitter.png')}}" alt="twitter"></a>
+                    <a href="https://publish.twitter.com/" target="_blank"><img src="{{asset('images/twitter.png')}}" alt="twitter"></a>
                     <!-- <a href="#"><img src="{{asset('images/linkedin.png')}}" alt="linkedin"></a> -->
-                    <a href="https://www.instagram.com" target="_blank"><img src="{{asset('images/instagram.png')}}" alt="instagram"></a>
+                    <a href="https://www.instagram.com/jofreerent" target="_blank"><img src="{{asset('images/instagram.png')}}" alt="instagram"></a>
             </div>
 
              <div class="col-lg-3 col-sm-3">
                     <h4>Contact us</h4>
                     <p><b>House Rent Rwanda</b><br>
 <span class="glyphicon glyphicon-map-marker"></span> Kigali Rwanda <br>
-<span class="glyphicon glyphicon-envelope"></span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fredrwagatenga@gmail.com&su=House Rent Rwada&body=BODY&" target="_blank"> houserentrwanda@gmail.com</a><br>
+<span class="glyphicon glyphicon-envelope"></span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jofreerent@gmail.com&su=House Rent Rwada&body=BODY&" target="_blank"> jofreerent@gmail.com</a><br>
 <span class="glyphicon glyphicon-earphone"></span> <a href="tel:+250781448238"> +250781448238</a></p>
             </div>
         </div>
